@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "LeetCode Analysis Helper",
+    "version": "1.0",
+    "description": "Analyzes LeetCode submissions in real-time",
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://api.x.ai/*",
+        "https://leetcode.com/*"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "service-worker.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://leetcode.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_start",
+            "all_frames": false
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["injected.js"],
+        "matches": ["https://leetcode.com/*"]
+    }],
+    "icons": {
+        "48": "icons/icon48.jpeg",
+        "128": "icons/icon128.jpeg"
+    },
+    "options_page": "options.html"
+}

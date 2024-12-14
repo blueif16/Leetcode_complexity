@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LeetCode Analysis Helper Options</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        #status {
+            margin-top: 10px;
+            padding: 10px;
+            display: none;
+        }
+        .success { background: #e8f5e9; color: #2e7d32; }
+        .error { background: #ffebee; color: #c62828; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Extension Settings</h2>
+        <div class="form-group">
+            <label for="apiKey">X.AI API Key:</label>
+            <input type="text" id="apiKey" placeholder="xai-...">
+        </div>
+        <button id="save">Save</button>
+        <div id="status"></div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html> 
